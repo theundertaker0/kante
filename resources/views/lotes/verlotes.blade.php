@@ -35,7 +35,7 @@
     </div>
     <div class="row mb-6">
         <div class="col-12 text-center">
-            <img src="{{asset('img/mapa_fk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante"/>
+            <img src="{{secure_asset('img/mapa_fk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
                     <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}"/>
@@ -46,11 +46,11 @@
 @endsection
 
 @section('js')
-<script src="//js/imageMapResizer.min.js"></script>
-<script src="//js/jquery.numbers.min.js"></script>
+<script src="{{secure_asset('js/imageMapResizer.min.js')}}"></script>
+<script src="{{secure_asset('js/jquery.numbers.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-      //  $('map').imageMapResize();
+        $('map').imageMapResize();
     });
 
 
