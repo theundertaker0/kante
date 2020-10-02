@@ -46,8 +46,8 @@
 @endsection
 
 @section('js')
-<script src="{{asset('js/imageMapResizer.js')}}"></script>
-<script src="{{asset('js/jquery.numbers.min.js')}}"></script>
+<script src="{{asset('//js/imageMapResizer.js')}}"></script>
+<script src="{{asset('//js/jquery.numbers.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('map').imageMapResizeF();
