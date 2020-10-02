@@ -41,14 +41,14 @@
         <h6>&copy; Contrastes 2020</h4>
       
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    @yield('js')
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>  
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-@yield('js')
+
 
 </html>
