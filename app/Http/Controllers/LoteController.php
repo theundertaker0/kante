@@ -93,4 +93,9 @@ class LoteController extends Controller
         }
         return $lote->status;
     }
+
+    public function verLotesCliente(){
+        $lotes=Lote::all();
+       return view('lotes.verlotes',compact('lotes'));
+    }
 }

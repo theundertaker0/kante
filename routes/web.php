@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[LoteController::class,'verLotesCliente']);
 Route::get('admin/lotes/setstatus/{id}', [LoteController::class, 'setStatus']);
 Route::resource('admin/lotes',LoteController::class);
 
