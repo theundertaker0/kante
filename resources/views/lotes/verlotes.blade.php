@@ -38,7 +38,7 @@
             <img src="{{secure_asset('img/mapa_fk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
-                    <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}"/>
+                    <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" style="color: red;"/>
                 @endforeach
             </map>
     </div>
@@ -56,9 +56,9 @@
 
     function modal(lote){
         var cuerpo='<ul class="list-group">'+
-    '<li class="list-group-item">Frente: '+lote.frente+' Mts.  Fondo: '+lote.fondo+' Mts.  Área: '+lote.area+' M2</li>'+
-    '<li class="list-group-item">Precio M2: $'+$.number(lote.m2)+'  Precio Total: $'+$.number(lote.total)+'</li>'+
-    '<li class="list-group-item">Enganche: $'+lote.enganche+' Saldo: $'+lote.saldo+'</li>'+
+    '<li class="list-group-item">Frente: '+lote.frente+' Mts. -  Fondo: '+lote.fondo+' Mts. -  Área: '+lote.area+' M2</li>'+
+    '<li class="list-group-item">Precio M2: $'+$.number(lote.m2,2,'.',',')+' -  Precio Total: $'+$.number(lote.total,2,'.',',')+'</li>'+
+    '<li class="list-group-item">Enganche: $'+$.number(lote.enganche,2,'.',',')+' - Saldo: $'+$.number(lote.saldo,2,'.',',')+'</li>'+
   '</ul>';
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModal').html(cuerpo);
