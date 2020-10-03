@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title')
+    Cotizador Finca Kanté
+@endsection
 @section('content')
 
 <!-- Modal -->
@@ -35,10 +38,15 @@
     </div>
     <div class="row mb-6">
         <div class="col-12 text-center">
-            <img src="{{secure_asset('img/mapa_fk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante"/>
+            <img src="{{secure_asset('img/mapa_fk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante" class="map"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
-                    <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" style="color: red;"/>
+                    @if($lote->status=='D')
+                        <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" data-maphilight='{"fillColor":"00ff00","fillOpacity":0.5}'/>
+                    @else
+                        <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" data-maphilight='{"fillColor":"ff0000","fillOpacity":0.5}'/>
+                    @endif
+                    
                 @endforeach
             </map>
     </div>
@@ -48,11 +56,13 @@
 @section('js')
 <script src="{{secure_asset('js/imageMapResizer.min.js')}}"></script>
 <script src="{{secure_asset('js/jquery.numbers.min.js')}}"></script>
+<script src="{{secure_asset('js/jquery.maphilight.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('map').imageMapResize();
     });
 
+    $('.map').maphilight();
 
     function modal(lote){
         var cuerpo='<ul class="list-group">'+
