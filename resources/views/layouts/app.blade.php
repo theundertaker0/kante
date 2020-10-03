@@ -27,6 +27,15 @@
             padding: 0.5em 0;
         }
 
+        .fulljustify {
+            text-align: justify;
+        }
+        .fulljustify:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        }
+
     </style>
 
 </head>

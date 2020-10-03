@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Modal paara realizar cambios en la tabla-->
+<!-- Small modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <input type="number" id="valorCambiar" class="form-control" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
     <div class="row my-4">
         <div class="col-lg-12 pt-2 text-center">
             <div class="pull-left">
@@ -32,9 +48,9 @@
                             <td>{{number_format($lote->frente,2)}}</td>
                             <td>{{number_format($lote->fondo,2)}}</td>
                             <td>{{number_format($lote->area,2)}}</td>
-                            <td>${{number_format($lote->m2,2)}}</td>
+                            <td class="editable">${{number_format($lote->m2,2)}}</td>
                             <td>${{number_format($lote->total,2)}}</td>
-                            <td>${{number_format($lote->enganche,2)}}</td>
+                            <td class="editable">${{number_format($lote->enganche,2)}}</td>
                             <td>${{number_format($lote->saldo,2)}}</td>
                             <td>
                                 @if($lote->status=='D')
@@ -80,6 +96,11 @@
                         "previous": "Anterior"
                     }
                 }
+            });
+
+            $('#dataTable tbody td.editable').click(function(){
+                $('#valorCambiar').val(this.textContent.replace(/[$,\s]/g,''));
+                $('#modal').modal('show');
             });
 
             $('#dataTable :input').change(function(){
