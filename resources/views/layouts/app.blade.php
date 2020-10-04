@@ -21,7 +21,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: #444;
+            background-color: #26422e;
             color: white;
             text-align: center;
             padding: 0.5em 0;
@@ -41,6 +41,11 @@
 </head>
 
 <body>
+    
+    <nav class="navbar" style="background-color: #26422e; width:100%;">
+        <img src="{{secure_asset('img/logoCompletoDorado.png')}}" alt="" class="navbar-brand" style="max-height:80px; ">
+    </nav>
+          
    
     <div class="container mb-5 pb-4">
         @yield('content')

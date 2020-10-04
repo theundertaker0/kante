@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Cotizador Finca Kanté
+    Cotizador
 @endsection
 @section('content')
 
@@ -33,7 +33,7 @@
     <div class="row my-4">
         <div class="col-lg-12 pt-2 text-center">
             <div class="pull-left">
-                <h2>Mapa de Lotes Finca Kanté</h2>
+                <h2>Cotizador</h2>
             </div>
             
         </div>
