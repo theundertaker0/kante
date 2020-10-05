@@ -70,7 +70,20 @@ class LoteController extends Controller
      */
     public function update(Request $request, Lote $lote)
     {
-        //
+       
+        switch($request->tipoCambio){
+            case 'm2':
+              $lote->total=$lote->area*$request->valorCambiar;
+              $lote->enganche=$lote->total*0.1;
+              $lote->saldo=$lote->total-$lote->enganche;
+              $lote->m2=$request->valorCambiar;
+               toastr()->success('Lote actualizado correctamente');
+              //return redirect()->route('lotes.index')->with('success','Lote actualizado correctamente');
+            break;
+        }
+        $lote->update();
+        return redirect()->route('lotes.index');
+
     }
 
     /**
