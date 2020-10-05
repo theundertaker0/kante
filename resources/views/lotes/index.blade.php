@@ -122,6 +122,13 @@
                 }
             });
 
+            $('#dataTable tbody td.editable').hover(function(){
+                $(this).css('border','1px solid black');
+            });
+            $('#dataTable tbody td.editable').mouseout(function(){
+                $(this).css('border','none');
+            });
+
             $('#dataTable tbody td.editable').click(function(){
                 console.log(this);
                 var x=this.dataset.id;
@@ -131,6 +138,8 @@
                 $('#valorCambiar').val(this.textContent.replace(/[$,\s]/g,''));
                 $('#modal').modal('show');
             });
+
+
 
             $('#dataTable :input').change(function(){
                 axios.get('lotes/setstatus/'+this.dataset.id)
