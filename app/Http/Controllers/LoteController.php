@@ -82,7 +82,8 @@ class LoteController extends Controller
             break;
             case 'msi':
               $lote->promocion=$request->valorCambiar;
-               toastr()->success('Lote actualizado correctamente');
+              toastr()->success('Lote actualizado correctamente');
+            break;
         }
         $lote->update();
         return redirect()->route('lotes.index');
