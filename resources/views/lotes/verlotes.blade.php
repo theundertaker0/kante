@@ -17,7 +17,7 @@
             <span aria-hidden="true" style="color:#bcb97d">&times;</span>
           </button>
         </div>
-        <div class="modal-body font-weight-bold px-5" id='cuerpoModal'>
+        <div class="modal-body font-weight-bold px-3" id='cuerpoModal'>
           
         </div>
         <div class="modal-footer">
