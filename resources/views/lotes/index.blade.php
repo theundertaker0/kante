@@ -60,6 +60,8 @@
                         <th class="text-center">Total</th>
                         <th class="text-center">Enganche</th>
                         <th class="text-center">Saldo</th>
+                        <th class="text-center">MSI</th>
+                        <th class="text-center">Mensualidad</th>
                         <th class="text-center">Acciones</th>
                     </tr>
                 </thead>
@@ -74,6 +76,8 @@
                             <td>${{number_format($lote->total,2)}}</td>
                             <td class="" data-id="{{$lote->id}}">${{number_format($lote->enganche,2)}}</td>
                             <td>${{number_format($lote->saldo,2)}}</td>
+                            <td class="editable" data-tipo="msi" data-id="{{$lote->id}}">{{$lote->promocion}}</td>
+                            <td>${{number_format(($lote->saldo/$lote->promocion),2)}}</td>
                             <td>
                                 @if($lote->status=='D')
                             <input type="checkbox" checked data-toggle="toggle" data-on="Disponible" data-off="Ocupado" data-onstyle='success fPrincipal' data-offstyle='danger' data-id="{{$lote->id}}">
@@ -98,7 +102,7 @@
     $(document).ready(function(){
         $('#dataTable').DataTable({
                 "columnDefs": [
-                    { "orderable": false, "targets": [8] }
+                    { "orderable": false, "targets": [9] }
                 ],
                 language: {
                     "decimal": "",
