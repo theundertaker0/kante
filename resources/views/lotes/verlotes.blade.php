@@ -69,8 +69,8 @@
     function modal(lote){
         var cuerpo='<div class="fulljustify mb-4 px-3 py-2" style="background-color:#e3e2c9">&middot;Frente:<span style="color:#e3e2c9">-</span>'+lote.frente+'mts   &middot;Fondo:<span style="color:#e3e2c9">-</span>'+lote.fondo+'mts</div>'+
         '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Área:<span style="color:#e3e2c9">-</span>'+lote.area+'m&sup2;   &middot;Precio<span style="color:#e3e2c9">-</span>M&sup2;:<span style="color:#e3e2c9">-</span>$'+$.number(lote.m2,2,'.',',')+'</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio<span style="color:#e3e2c9">-</span>total:<span style="color:#e3e2c9">-</span>'+$.number(lote.total,'.',',')+'m&sup2;   &middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo,2,'.',',')+' &middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'</div>';
+        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio<span style="color:#e3e2c9">-</span>Total:<span style="color:#e3e2c9">-</span>$'+$.number(lote.total,2,'.',',')+'   &middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
+        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo,2,'.',',')+' &middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>';
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModal').html(cuerpo);
         $('#modal').modal('show');
