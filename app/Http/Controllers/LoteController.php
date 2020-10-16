@@ -101,13 +101,9 @@ class LoteController extends Controller
         //
     }
 
-    public function setStatus($id){
+    public function setStatus($id,$val){
         $lote=Lote::find($id);
-        if($lote->status=='D'){
-            $lote->update(['status'=>'O']);
-        }else{
-            $lote->update(['status'=>'D']);
-        }
+        $lote->update(['status'=>$val]);
         return $lote->status;
     }
 

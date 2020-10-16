@@ -79,11 +79,28 @@
                             <td class="editable" data-tipo="msi" data-id="{{$lote->id}}">{{$lote->promocion}}</td>
                             <td>${{number_format(($lote->saldo/$lote->promocion),2)}}</td>
                             <td>
-                                @if($lote->status=='D')
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Disponible" data-off="Ocupado" data-onstyle='success fPrincipal' data-offstyle='danger' data-id="{{$lote->id}}">
+                            <select class="form-control" name="status" id="{{$lote->id}}">
+                                    @if($lote->status=='D')
+                                        <option value="D" selected>Disponible</option>
+                                    @else
+                                        <option value="D">Disponible</option>
+                                    @endif
+                                    @if($lote->status=='A')
+                                        <option value="A" selected>Apartado</option>
+                                    @else
+                                        <option value="A">Apartado</option>
+                                    @endif
+                                    @if($lote->status=='O')
+                                        <option value="O" selected>Ocupado</option>
+                                    @else
+                                        <option value="O">Ocupado</option>
+                                    @endif
+                                </select>
+                               {{--  @if($lote->status=='D')
+                                    <input type="selec" checked data-toggle="toggle" data-on="Disponible" data-off="Ocupado" data-onstyle='success fPrincipal' data-offstyle='danger' data-id="{{$lote->id}}">
                                 @else
                                     <input type="checkbox" data-toggle="toggle" data-on="Disponible" data-off="Ocupado" data-onstyle='success' data-offstyle='danger' data-id="{{$lote->id}}">
-                                @endif
+                                @endif --}}
 
                             </td>
                         </tr>
@@ -145,9 +162,11 @@
 
 
 
-            $('#dataTable :input').change(function(){
-                axios.get('lotes/setstatus/'+this.dataset.id)
+            $('select').change(function(){
+                console.log('Aquí si llega');
+                axios.get('lotes/setstatus/'+this.id+'/'+this.value)
                 .then(response=>{
+                    toastr.success("Status cambiado exitosamente")
                    console.log(response.data);
                 })
                 .catch(e=>{
