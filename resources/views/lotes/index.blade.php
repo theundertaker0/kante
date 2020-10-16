@@ -118,6 +118,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#dataTable').DataTable({
+                "paging":false,
                 "columnDefs": [
                     { "orderable": false, "targets": [9] }
                 ],
