@@ -74,7 +74,7 @@
         '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio<span style="color:#e3e2c9">-</span>Total:<span style="color:#e3e2c9">-</span>$'+$.number(lote.total,2,'.',',')+'   &middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
         '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo,2,'.',',')+' &middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
         '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">'+
-        '<center><iframe src="/assets/lotes/pdf/Lote'+lote.lote+''"></iframe></center>'
+        '<center><iframe src="/assets/lotes/pdf/Lote'+lote.lote+'"></iframe></center>'+
         '</div>';
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModal').html(cuerpo);
