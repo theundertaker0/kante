@@ -45,9 +45,11 @@
                 @foreach ($lotes as $lote )
                     @if($lote->status=='D')
                         <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" data-maphilight='{"fillColor":"00ff00","fillOpacity":0.3}'/>
-                    @else
+                    @elseif($lote->status=='O')
                         <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" data-maphilight='{"fillColor":"ff0000","fillOpacity":0.3}'/>
-                    @endif
+                    @else
+                        <area shape="poly" coords="{{$lote->coordenadas}}" onclick="modal({{$lote}})" title="Lote {{$lote->lote}}" data-maphilight='{"fillColor":"ff8000","fillOpacity":0.3}'/>
+                    @endif 
                     
                 @endforeach
             </map>
