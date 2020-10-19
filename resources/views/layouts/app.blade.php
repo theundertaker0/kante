@@ -16,6 +16,12 @@
     </script>
 
     <style>
+
+        @font-face { font-family: "Aver";  src: url('/fonts/aver/Aver.eot?') format('eot'), url('/fonts/aver/Aver.woff') format('woff'), url('/fonts/aver/Aver.ttf') format('truetype');}
+        
+        body{
+            font-family: 'Aver';
+        }
         .footer {
             position: fixed;
             left: 0;

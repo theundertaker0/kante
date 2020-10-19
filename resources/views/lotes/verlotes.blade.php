@@ -11,8 +11,8 @@
       <div class="modal-content">
         <div class="modal-header align-items-center" style="background-color: #26422e; color:#bcb97d; padding:0 auto!important;">
            
-            <img src="{{secure_asset('img/isotipoDorado.png')}}" alt="" style="max-width: 20px;">  
-            <h3 class="modal-title text-center w-100" id="tituloModal">Modal title</h3>
+            <img src="{{secure_asset('img/logoDoradoSoloLetras.png')}}" alt="" style="max-height: 40px;">  
+            <h3 class="modal-title text-right w-100 pr-2" id="tituloModal">Modal title</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" style="color:#bcb97d">&times;</span>
           </button>
@@ -88,9 +88,9 @@
         '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
         '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo: $'+$.number(lote.saldo,2,'.',',')+'</div>'+
         '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
-        '<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" style="background-color: #26422e; color:#FFF">Cotizar</button>'+
+        '<button type="button" class="btn btn-danger btn-block" data-dismiss="modal" style="background-color: #26422e; color:#FFF">Cotizar</button>'+
         '</div>';
-        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf"></iframe></center>';
+        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf" height="422px"></iframe></center>';
         }
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModalDer').html(cuerpoDer);
