@@ -7,7 +7,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header align-items-center" style="background-color: #26422e; color:#bcb97d; padding:0 auto!important;">
            
@@ -18,10 +18,16 @@
           </button>
         </div>
         <div class="modal-body font-weight-bold px-3" id='cuerpoModal'>
-          
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-6" id="cuerpoModalIzq"></div>
+                <div class="col-6" id="cuerpoModalDer"></div>
+              </div>
+          </div>
+            
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color: #bcb97b; color:#26422e">Cerrar</button>
+          
         </div>
       </div>
     </div>
@@ -40,7 +46,7 @@
     </div>
     <div class="row mb-4 text-center">
         <div class="col-12 text-center mb-2">
-            <img src="{{secure_asset('img/cotizadorfk.png')}}" name="kante" id="map-image" style="width: 750px; height: auto;" alt="" usemap="#kante" class="map"/>
+            <img src="{{secure_asset('img/Cotizador-FK.PNG')}}" name="kante" id="map-image" style="width: 1181px; height: auto;" alt="" usemap="#kante" class="map"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
                     @if($lote->status=='D')
@@ -69,20 +75,26 @@
     $('.map').maphilight();
 
     function modal(lote){
-        var cuerpo="";
+        var cuerpoIzq="";
+        var cuerpoDer="";
         if(lote.lote=='47'){
-            cuerpo='<div class="text-center mb-4 px-2 py-2" style="background-color:#e3e2c9"><b>Casa Club</b></div>';
+            cuerpoDer='<div class="text-center mb-2 px-2 py-2" style="background-color:#e3e2c9"><b>Casa Club</b></div>';
         }else{
-        cuerpo='<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Frente:<span style="color:#e3e2c9">-</span>'+lote.frente+'mts   &middot;Fondo:<span style="color:#e3e2c9">-</span>'+lote.fondo+'mts</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Área:<span style="color:#e3e2c9">-</span>'+lote.area+'m&sup2;   &middot;Precio<span style="color:#e3e2c9">-</span>M&sup2;:<span style="color:#e3e2c9">-</span>$'+$.number(lote.m2,2,'.',',')+'</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio<span style="color:#e3e2c9">-</span>Total:<span style="color:#e3e2c9">-</span>$'+$.number(lote.total,2,'.',',')+'   &middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo,2,'.',',')+' &middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
-        '<div class="fulljustify mb-4 px-2 py-2" style="background-color:#e3e2c9">'+
-        '<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf"></iframe></center>'+
+        cuerpoDer='<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Frente: '+lote.frente+'mts</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Fondo: '+lote.fondo+'mts</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Área: '+lote.area+'m&sup2;</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio<span style="color:#e3e2c9">-</span>M&sup2;:<span style="color:#e3e2c9">-</span>$'+$.number(lote.m2,2,'.',',')+'</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Precio Total: '+$.number(lote.total,2,'.',',')+'</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Enganche:<span style="color:#e3e2c9">-</span>$'+$.number(lote.enganche,2,'.',',')+'</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Saldo: $'+$.number(lote.saldo,2,'.',',')+'</div>'+
+        '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
+        '<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal" style="background-color: #26422e; color:#FFF">Cotizar</button>'+
         '</div>';
+        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf"></iframe></center>';
         }
         $('#tituloModal').text('Lote '+lote.lote);
-        $('#cuerpoModal').html(cuerpo);
+        $('#cuerpoModalDer').html(cuerpoDer);
+        $('#cuerpoModalIzq').html(cuerpoIzq)
         $('#modal').modal('show');
     }
 
