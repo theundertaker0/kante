@@ -38,7 +38,7 @@
             
         </div>
     </div>
-    <div class="row mb-3">
+    <div class="row mb-2">
         <div class="col-12 text-center">
             <img src="{{secure_asset('img/cotizadorfk.png')}}" name="kante" id="map-image" style="width: 1181px; max-width: 100%; height: auto;" alt="" usemap="#kante" class="map"/>
             <map name="kante" id="kante">

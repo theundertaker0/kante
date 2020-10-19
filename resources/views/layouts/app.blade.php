@@ -47,14 +47,14 @@
 <body>
     
     <nav class="navbar" style="background-color: #26422e; width:100%;">
-        <img src="{{secure_asset('img/logoCompletoDorado.png')}}" alt="" class="navbar-brand" style="max-height:80px; ">
+        <img src="{{secure_asset('img/logoCompletoDorado.png')}}" alt="" class="navbar-brand" style="max-height:70px; ">
     </nav>
           
    
-    <div class="container mb-5 pb-4">
+    <div class="container mb-2 pb-2">
         @yield('content')
     </div>
-    <div class="text-center footer mt-5">
+    <div class="text-center footer mt-3">
 
         <h6>&copy; Contrastes 2020</h4>
       
