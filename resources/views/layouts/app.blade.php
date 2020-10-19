@@ -51,10 +51,10 @@
     </nav>
           
    
-    <div class="container mb-2 pb-2">
+    <div class="container mb-4 pb-2">
         @yield('content')
     </div>
-    <div class="text-center footer mt-3">
+    <div class="text-center footer mt-4">
 
         <h6>&copy; Contrastes 2020</h4>
       

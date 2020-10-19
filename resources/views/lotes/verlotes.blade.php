@@ -38,8 +38,8 @@
             
         </div>
     </div>
-    <div class="row mb-2 text-center">
-        <div class="col-12 text-center">
+    <div class="row mb-4 text-center">
+        <div class="col-12 text-center mb-2">
             <img src="{{secure_asset('img/cotizadorfk.png')}}" name="kante" id="map-image" style="width: 750px; height: auto;" alt="" usemap="#kante" class="map"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
