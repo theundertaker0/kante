@@ -20,7 +20,7 @@
         <div class="modal-body font-weight-bold px-3" id='cuerpoModal'>
           <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-6" id="cuerpoModalIzq"></div>
+                <div class="col-12 col-lg-6 mb-2" id="cuerpoModalIzq"></div>
                 <div class="col-12 col-lg-6" id="cuerpoModalDer"></div>
             </div>
           </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="row mb-4 text-center">
         <div class="col-12 text-center mb-2">
-            <img src="{{secure_asset('img/Cotizador-FK.PNG')}}" name="kante" id="map-image" style="width: 1181px; height: auto;" alt="" usemap="#kante" class="map"/>
+            <img src="{{secure_asset('img/Cotizador-FK.PNG')}}" name="kante" id="map-image" style="max-width: 1181px; height: auto;" alt="" usemap="#kante" class="map"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
                     @if($lote->status=='D')
