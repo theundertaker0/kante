@@ -20,9 +20,9 @@
         <div class="modal-body font-weight-bold px-3" id='cuerpoModal'>
           <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-6" id="cuerpoModalIzq"></div>
-                <div class="col-12 col-md-6" id="cuerpoModalDer"></div>
-              </div>
+                <div class="col-12 col-lg-6" id="cuerpoModalIzq"></div>
+                <div class="col-12 col-lg-6" id="cuerpoModalDer"></div>
+            </div>
           </div>
             
         </div>
@@ -59,7 +59,7 @@
                     
                 @endforeach
             </map>
-    </div>
+        </div>
     </div>
 @endsection
 
@@ -73,6 +73,10 @@
     });
 
     $('.map').maphilight();
+
+   
+
+
 
     function modal(lote){
         var cuerpoIzq="";
@@ -90,7 +94,7 @@
         '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
         '<button type="button" class="btn btn-danger btn-block" data-dismiss="modal" style="background-color: #26422e; color:#FFF">Cotizar</button>'+
         '</div>';
-        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf" height="422px"></iframe></center>';
+        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf" style="max-height:422px"></iframe></center>';
         }
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModalDer').html(cuerpoDer);
