@@ -46,7 +46,7 @@
     </div>
     <div class="row mb-4 text-center">
         <div class="col-12 text-center mb-2">
-            <img src="{{secure_asset('img/Cotizador-FK.PNG')}}" name="kante" id="map-image" style="max-width: 1181px; height: auto;" alt="" usemap="#kante" class="map"/>
+            <img src="{{secure_asset('img/Cotizador-FK.PNG')}}" name="kante" id="map-image"  alt="" usemap="#kante" class="map img-fluid"/>
             <map name="kante" id="kante">
                 @foreach ($lotes as $lote )
                     @if($lote->status=='D')
@@ -94,7 +94,7 @@
         '<div class="mb-2 px-2 py-2" style="background-color:#e3e2c9">&middot;Mensualidad:<span style="color:#e3e2c9">-</span>$'+$.number(lote.saldo/lote.promocion,2,'.',',')+'<span style="color:#e3e2c9">-</span>('+lote.promocion+'<span style="color:#e3e2c9">-</span>meses)</div>'+
         '<button type="button" class="btn btn-danger btn-block" data-dismiss="modal" style="background-color: #26422e; color:#FFF">Cotizar</button>'+
         '</div>';
-        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf" style="max-height:422px"></iframe></center>';
+        cuerpoIzq='<center><iframe src="/assets/lotes/pdfs/Lote'+lote.lote+'.pdf" style="height:422px"></iframe></center>';
         }
         $('#tituloModal').text('Lote '+lote.lote);
         $('#cuerpoModalDer').html(cuerpoDer);
