@@ -20,8 +20,8 @@
         <div class="modal-body font-weight-bold px-3" id='cuerpoModal'>
           <div class="container-fluid">
             <div class="row">
-                <div class="col-6" id="cuerpoModalIzq"></div>
-                <div class="col-6" id="cuerpoModalDer"></div>
+                <div class="col-12 col-md-6" id="cuerpoModalIzq"></div>
+                <div class="col-12 col-md-6" id="cuerpoModalDer"></div>
               </div>
           </div>
             
